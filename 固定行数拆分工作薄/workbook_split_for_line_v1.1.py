@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-
-
 import openpyxl
 
 class WorkbookSplitRegularLine(object):
@@ -25,11 +23,6 @@ class WorkbookSplitRegularLine(object):
         self.header = self.lines[0:1]
         # 获取数据行
         self.dataline = self.lines[1:]
-
-
-
-
-
 
     # 把一个数据集保存成一个xlsx文件，参数1：数据集，参数2：拆分文件的流水号。
     def one_sheet(self,data, sheet_no):
@@ -59,7 +52,6 @@ class WorkbookSplitRegularLine(object):
         # 保存文件
         wb.save(self.full_filename+'-%02d.xlsx' % (sheet_no + 1))
 
-
     def dealing(self):
 
         # 每个文件数据行数
@@ -71,7 +63,6 @@ class WorkbookSplitRegularLine(object):
             # 取数据集，每个数据集最多3000行，最后一个不足3000行，直接处理。
             lines_ = self.dataline[pt * self.batche_num : (pt + 1) * self.batche_num]
             self.one_sheet(lines_,pt)
-
 
 if __name__ == '__main__':
     app = WorkbookSplitRegularLine("示例.xlsx",10000)
