@@ -12,6 +12,7 @@ class GuiTemp(object):
         """
         # 新建窗口
         self.master = tk.Tk()
+        self.photo = tk.PhotoImage(file="xzpq.gif")
         # self.path 用于存放选择的文件路径
         # self.flag暂时没用
         # self.v1 self.v2接收用户参数
@@ -36,9 +37,9 @@ class GuiTemp(object):
         :rtype:
         """
         # 图片贴上去
-        self.photo = tk.PhotoImage(file="xzpq.gif")
-        imgLable = tk.Label(self.master, image=self.photo)
-        imgLable.pack()
+
+        img_lable = tk.Label(self.master, image=self.photo)
+        img_lable.pack()
 
     def window(self):
         """
@@ -84,6 +85,7 @@ class GuiTemp(object):
         :rtype:
         """
         # 选择文件，path_select变量接收文件地址
+        # 注意：self.path 是tk.StringVar()对象，而path_select是str变量
         path_select = tkinter.filedialog.askopenfilename()
         # 通过replace函数替换绝对文件地址中的/来使文件可被程序读取
         # 注意：\\转义后为\，所以\\\\转义后为\\
