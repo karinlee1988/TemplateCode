@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200117
 # @Author  : karinlee
-# @FileName: count_date_gui_v3.0.py
+# @FileName: count_date_v3.0.py
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
