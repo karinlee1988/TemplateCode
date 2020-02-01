@@ -16,7 +16,7 @@ class CountDate(object):
 
     def __init__(self):
         self.master = tk.Tk()
-        self.photo = tk.PhotoImage(file="img\\si2.gif")
+        self.photo = tk.PhotoImage(file="img\\xzpq.gif")
         self.v1 = tk.StringVar()
         self.v2 = tk.StringVar()
         self.v3 = tk.StringVar()
