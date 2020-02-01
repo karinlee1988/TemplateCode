@@ -1,5 +1,10 @@
-
-
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time    : 20200201
+# @Author  : karinlee
+# @FileName: workbook_split_to_workbooks_v2.0.py
+# @Software: pycharm
+# @Blog    ：https://blog.csdn.net/weixin_43972976
 
 import pandas as pd
 import tkinter as tk
@@ -8,6 +13,7 @@ import tkinter.filedialog
 class WorkbookSplit(object):
     """
     将单个工作薄按列字段拆分为多个工作薄
+    表头默认为1行
     """
 
     def __init__(self):
@@ -16,6 +22,8 @@ class WorkbookSplit(object):
         """
         # 新建窗口
         self.master = tk.Tk()
+        # 添加图片
+        self.photo = tk.PhotoImage(file="img\\xzpq.gif")
         # self.path 用于存放选择的文件路径
         # self.col 用于用户输入列字段
         # 注意！这些都是tk.StringVar()对象，不是str，其他地方要用的话要用get()方法获取str
@@ -29,7 +37,6 @@ class WorkbookSplit(object):
         # 保持运行
         self.master.mainloop()
 
-
     def main(self):
         """
         主界面布局设置
@@ -39,12 +46,10 @@ class WorkbookSplit(object):
         self.master.geometry("800x600+600+100")
         self.master.title("拆分excel工作薄工具by李加林 gui版v2.0")
         # 图片贴上去
-        self.photo = tk.PhotoImage(file="img\\xzpq.gif")
         imgLable = tk.Label(self.master, image=self.photo)
         imgLable.pack()
         # 把标题贴上去
         tk.Label(self.master,text="拆分xlsx单个工作薄为多个工作薄\n表头默认为1行\n\n",font=("黑体",20)).pack()
-
 
     def frame(self):
         """
@@ -70,7 +75,6 @@ class WorkbookSplit(object):
         :return: None
         :rtype: None
         """
-
         wb = pd.read_excel(self.path.get())  #打开工作薄
         col = wb[self.col.get()].unique() #对单位列去重复
         for x in col:
