@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time : 2020/1/28 16:56
 # @Author : karinlee
-# @FileName : workbook_split_for_line_v2.0.py
+# @FileName : workbook_split_for_line_gui_v2.0.py
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200126
 # @Author  : karinlee
-# @FileName: si_attendance_v5.0.py
+# @FileName: si_attendance_gui_v5.0.py
 # @Software: PyCharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 

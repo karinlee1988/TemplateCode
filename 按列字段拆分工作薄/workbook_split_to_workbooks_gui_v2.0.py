@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200201
 # @Author  : karinlee
-# @FileName: workbook_split_to_workbooks_v2.0.py
+# @FileName: workbook_split_to_workbooks_gui_v2.0.py
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
