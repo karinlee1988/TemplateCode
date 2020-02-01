@@ -2,13 +2,17 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200117
 # @Author  : karinlee
-# @FileName: count_date_gui_v3.py
+# @FileName:
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
 import tkinter as tk
 
 class CountDate(object):
+    """
+    社保参保月数计算器，根据起始日期和结束日期，计算某参保时段月数（包含头尾月份）
+    日期格式为yymm或yymmdd   日期格式示例：201912 或 20191201
+    """
 
     def __init__(self):
         self.master = tk.Tk()
@@ -53,8 +57,7 @@ class CountDate(object):
         :return:  None
         :rtype: None
         """
-        #     result = int(v1.get()) + int(v2.get())
-        #     v3.set(str(result))
+        # 根据起始日期和结束日期，计算参保时段月数
         full_month = (int(self.v2.get()[0:4]) - int(self.v1.get()[0:4])) * 12 + (int(self.v2.get()[4:6]) - int(self.v1.get()[4:6])) + 1
         self.v3.set(str(full_month))
 
