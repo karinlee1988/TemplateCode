@@ -2,10 +2,9 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200117
 # @Author  : karinlee
-# @FileName: count_date_gui.py
+# @FileName: count_date_gui_v3.py
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
-
 
 import tkinter as tk
 
