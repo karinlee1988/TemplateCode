@@ -133,4 +133,5 @@ dmypy.json
 *.xls
 .idea
 *.txt
+*.exe
 
