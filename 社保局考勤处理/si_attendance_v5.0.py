@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 20200126
 # @Author  : karinlee
-# @FileName: si_attendance.py
+# @FileName: si_attendance_v5.0.py
 # @Software: PyCharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
@@ -102,7 +102,6 @@ class SiAttendance(object):
                     ws_new.title = name
             wb_new.save(name + '.xlsx')
 
-
     def dealing(self):
         """
         进行考勤报表整个流程的处理
@@ -124,11 +123,9 @@ class SiAttendance(object):
 #     si = SiAttendance('201912.xlsx','201912')
 #     si.dealing()
 
-
-
 class SiGui(object):
     """
-    tkinter GUI界面模板（可选择文件进行操作）
+    tkinter GUI处理考勤
     """
 
     def __init__(self):
@@ -137,6 +134,7 @@ class SiGui(object):
         """
         # 新建窗口
         self.master = tk.Tk()
+        self.photo = tk.PhotoImage(file="si2.gif")
         # self.path 用于存放选择的文件路径
         # self.flag暂时没用
         # self.v1 self.v2接收用户参数
@@ -161,7 +159,6 @@ class SiGui(object):
         :rtype:
         """
         # 图片贴上去
-        self.photo = tk.PhotoImage(file="si2.gif")
         imgLable = tk.Label(self.master, image=self.photo)
         imgLable.pack()
 
@@ -216,7 +213,6 @@ class SiGui(object):
         # self.path设置path_select的值
         self.path.set(path_select1)
 
-
     def main(self):
         """
         这个是主程序
@@ -225,11 +221,8 @@ class SiGui(object):
         """
         filepath = self.path.get()
         date = self.v1.get()
-
         si = SiAttendance(filepath,date)
         si.dealing()
-
-
         # 标志设置为处理完成
         self.flag.set("处理完成！")
 
