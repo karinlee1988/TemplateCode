@@ -3,19 +3,19 @@ import tkinter.filedialog
 
 class GuiTemp(object):
     """
-    tkinter GUI界面模板（可选择文件进行操作）
+    tkinter GUI界面模板（可选择文件进行操作版）
     """
-
     def __init__(self):
         """
         创建界面
         """
         # 新建窗口
         self.master = tk.Tk()
+        # 在界面顶部添加横幅图片
         self.photo = tk.PhotoImage(file="xzpq.gif")
         # self.path 用于存放选择的文件路径
-        # self.flag暂时没用
-        # self.v1 self.v2接收用户参数
+        # self.flag 当程序运行完成后给用户提示信息
+        # self.v1 self.v2接收用户参数 待选用，不够可以加
         # 注意！这些都是tk.StringVar()对象，不是str，其他地方要用的话要用get()方法获取str
         self.path = tk.StringVar()
         self.flag = tk.StringVar()
@@ -37,7 +37,6 @@ class GuiTemp(object):
         :rtype:
         """
         # 图片贴上去
-
         img_lable = tk.Label(self.master, image=self.photo)
         img_lable.pack()
 
@@ -47,13 +46,11 @@ class GuiTemp(object):
         :return:
         :rtype:
         """
+        # 调整窗口默认大小及在屏幕上的位置
         self.master.geometry("800x600+600+100")
+        # 窗口的标题栏，自己修改
         self.master.title("xxxxxxby李加林v1.0")
-        # 图片贴上去
-        # self.photo = tk.PhotoImage(file="xzpq.gif")
-        # imgLable = tk.Label(self.master, image=self.photo)
-        # imgLable.pack()
-        # 把标题贴上去
+        # 把标题贴上去，自己修改
         tk.Label(self.master,text="------这个是大标题-------",font=("黑体",20)).pack()
         tk.Label(self.master,text="------这个是小标题-------",font=("黑体",16)).pack()
 
@@ -95,12 +92,16 @@ class GuiTemp(object):
 
     def main(self):
         """
-        这个是主程序
+        这个是主程序，最好将非gui版的程序封装成类，接收该GUI类的参数后实例化运行
         :return:
         :rtype:
         """
+        #
+        #  这里写主程序
+        #
         # 标志设置为处理完成
         self.flag.set("处理完成！")
 
 if __name__ == '__main__':
+    # 实例化运行
     app = GuiTemp()
