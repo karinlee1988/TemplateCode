@@ -1,3 +1,11 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+# @Time : 2020/2/1 15:12
+# @Author : karinlee
+# @FileName : gui_temp_standard.py
+# @Software : PyCharm
+# @Blog : https://blog.csdn.net/weixin_43972976
+
 import tkinter as tk
 import tkinter.filedialog
 
