@@ -1,7 +1,7 @@
 import tkinter as tk
 import tkinter.filedialog
 
-class GuiTemp(object):
+class GuiTempStandard(object):
     """
     tkinter GUI界面模板（可选择文件进行操作版）
     """
@@ -104,4 +104,4 @@ class GuiTemp(object):
 
 if __name__ == '__main__':
     # 实例化运行
-    app = GuiTemp()
+    app = GuiTempStandard()
