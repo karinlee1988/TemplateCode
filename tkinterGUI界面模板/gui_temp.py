@@ -12,7 +12,7 @@ class GuiTemp(object):
         # 新建窗口
         self.master = tk.Tk()
         # 在界面顶部添加横幅图片
-        self.photo = tk.PhotoImage(file="xzpq.gif")
+        self.photo = tk.PhotoImage(file="si2.gif")
         # self.path 用于存放选择的文件路径
         # self.flag 当程序运行完成后给用户提示信息
         # self.v1 self.v2接收用户参数 待选用，不够可以加
@@ -73,7 +73,7 @@ class GuiTemp(object):
         tk.Entry(frame1, textvariable=self.v2).grid(row=3, column=1)
         # 按这个按钮执行主程序
         tk.Button(frame1, text="开始处理", command=self.main, font=("黑体", 16)).grid(row=4, column=1,pady=66)
-        tk.Entry(frame1, textvariable=self.flag,state="readonly").grid(row=4, column=2,pady=66)
+        tk.Entry(frame1, textvariable=self.flag,state="readonly").grid(row=4, column=2)
 
     def select_path(self):
         """
