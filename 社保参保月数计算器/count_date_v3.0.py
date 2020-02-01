@@ -26,7 +26,7 @@ class CountDate(object):
 
     def main(self):
         self.master.geometry("800x666+600+100")  # 设置窗口大小和位置
-        self.master.title("社保参保月数计算器by李加林 gui版v2.0")
+        self.master.title("社保参保月数计算器by李加林 gui版v3.0")
         imgLable = tk.Label(self.master, image=self.photo)
         imgLable.pack()
         theLabel = tk.Label(self.master, text="* 计算某个参保时段的参保月数用 *\n\n* 输入需要计算的参保时段起始日期和结束日期，得到月数 *\n ", font=("黑体", 20))
