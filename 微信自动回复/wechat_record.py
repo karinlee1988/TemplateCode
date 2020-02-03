@@ -10,7 +10,7 @@ import itchat
 # from itchat.content import *
 import time
 
-# 自动回复
+# 自动记录群聊@我的信息，写入message.txt文档中。
 # 封装好的装饰器，当接收到的消息是Text，即文字消息
 # @itchat.msg_register('Text')
 # 封装好的装饰器，当接收到的消息是[TEXT, PICTURE,SHARING,ATTACHMENT,VIDEO]
@@ -36,8 +36,8 @@ import time
 # @itchat.msg_register([TEXT, PICTURE,RECORDING,ATTACHMENT,SHARING,VIDEO])
 
 def record(name,message):
-    with open (r"message.txt","a") as f:
-        f.write(name,message,'\n')
+    with open (r"message.txt","a",encoding='utf8') as f:
+        f.write(u'%s,%s\n' %(name,message))
 
 def wechat_autoreply():
 #     @itchat.msg_register(['Text', 'Picture','Recording','Sharing','Attachment','Video'])
@@ -101,10 +101,10 @@ def wechat_autoreply():
                                  msg['ActualNickName'],   # 好友备注名
                                  reply_message), toUserName='filehelper')
                 # 调用record()函数进行记录
-                record(msg['ActualNickName'],reply_message)
+                record(msg['ActualNickName'],reply_message.replace("@李加林",''))
 
                 # 回复给好友
-                return u'[自动回复]已自动记录。\n%s\n%s' % (msg['ActualNickName'],reply_message)
+                return u'[自动回复]已自动记录。\n%s\n%s' % (msg['ActualNickName'],reply_message.replace("@李加林",''))
     #登录微信
     itchat.auto_login()
     # 获取自己的user_name
