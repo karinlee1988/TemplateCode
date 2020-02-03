@@ -5,7 +5,8 @@
 # @FileName: wechat_record.py
 # @Software: PyCharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
- 
+
+import csv
 import itchat
 # from itchat.content import *
 import time
@@ -35,11 +36,20 @@ import time
 # 引入后可使用itchat.content里面的常量，但也可以不引入 直接用字符串注册
 # @itchat.msg_register([TEXT, PICTURE,RECORDING,ATTACHMENT,SHARING,VIDEO])
 
-def record(name,message):
-    with open (r"message.txt","a",encoding='utf8') as f:
-        f.write(u'%s,%s\n' %(name,message))
+# def record_txt(name,message):
+#     with open (r"message.txt","a",encoding='utf8') as f:
+#         f.write(u'%s,%s\n' %(name,message))
 
-def wechat_autoreply():
+def record_csv(clock,group,name,message):
+
+    # 1. 创建文件对象
+    with open(r'message.csv','a',newline='',encoding='utf-8') as f:
+        # 2. 基于文件对象构建 csv写入对象
+        csv_writer = csv.writer(f)
+        # 3. 写入文件
+        csv_writer.writerow([clock,group,name,message])
+
+def wechat_autorecord():
 #     @itchat.msg_register(['Text', 'Picture','Recording','Sharing','Attachment','Video'])
 #     def text_reply(msg):
 #         """
@@ -100,11 +110,15 @@ def wechat_autoreply():
                                  msg['User']['NickName'],  # 群聊名称
                                  msg['ActualNickName'],   # 好友备注名
                                  reply_message), toUserName='filehelper')
+                # 回复给好友
                 # 调用record()函数进行记录
-                record(msg['ActualNickName'],reply_message.replace("@李加林",''))
+                record_csv(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(msg['CreateTime'])),
+                           msg['User']['NickName'],
+                            msg['ActualNickName'],
+                           reply_message.replace("@李加林",''))
 
                 # 回复给好友
-                return u'[自动回复]已自动记录。\n%s,%s' % (msg['ActualNickName'],reply_message.replace("@李加林",''))
+                return u'[自动回复]已自动记录。\n%s-> %s' % (msg['ActualNickName'],reply_message.replace("@李加林",''))
     #登录微信
     itchat.auto_login()
     # 获取自己的user_name
@@ -113,4 +127,4 @@ def wechat_autoreply():
     itchat.run()
 
 if __name__ == '__main__':
-    wechat_autoreply()
+    wechat_autorecord()
