@@ -104,7 +104,7 @@ def wechat_autoreply():
                 record(msg['ActualNickName'],reply_message.replace("@李加林",''))
 
                 # 回复给好友
-                return u'[自动回复]已自动记录。\n%s\n%s' % (msg['ActualNickName'],reply_message.replace("@李加林",''))
+                return u'[自动回复]已自动记录。\n%s,%s' % (msg['ActualNickName'],reply_message.replace("@李加林",''))
     #登录微信
     itchat.auto_login()
     # 获取自己的user_name
