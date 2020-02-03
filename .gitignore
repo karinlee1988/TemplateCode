@@ -135,4 +135,4 @@ dmypy.json
 *.txt
 *.exe
 *.png
-
+*.csv
