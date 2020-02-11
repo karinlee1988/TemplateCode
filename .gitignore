@@ -136,3 +136,4 @@ dmypy.json
 *.exe
 *.png
 *.csv
+itchat.pkl
