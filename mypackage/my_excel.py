@@ -82,7 +82,6 @@ def vlookup(
             #找不到数据 相应的单元格填上#N/A
             ws_template.cell(row=row, column=template_value_index).value = "#N/A"
 
-
 def test():
     """
     测试函数用
@@ -92,8 +91,6 @@ def test():
     source = openpyxl.load_workbook("数据.xlsx")
     vlookup(temp,0,'C','B',source,1,'E','D',2)
     temp.save("已对碰.xlsx")
-
-
 
 if __name__ == '__main__':
     test()
