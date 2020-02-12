@@ -6,6 +6,10 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
+"""
+本模块包含相关自建函数，用于处理文档相关操作。
+"""
+
 import os
 import csv
 

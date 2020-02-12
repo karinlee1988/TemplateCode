@@ -6,6 +6,10 @@
 # @Software: PyCharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
+"""
+本模块用于自动记录微信收到的信息，自动回复并记录到csv文件中。
+"""
+
 import csv
 import itchat
 # from itchat.content import *

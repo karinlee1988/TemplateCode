@@ -6,6 +6,10 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
+"""
+本模块包含相关自建函数，用于处理excel表格。
+"""
+
 import os
 import openpyxl
 from openpyxl.utils import get_column_letter, column_index_from_string
