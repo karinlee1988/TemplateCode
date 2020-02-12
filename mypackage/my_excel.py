@@ -82,12 +82,12 @@ def vlookup(
 
 def get_xlsx_filename(folder_path):
     """
-    获取待处理文件夹里所有后缀为.xlsx的文件名
+    获取待处理文件夹里所有后缀为.xlsx的全文件名
 
     :param folder_path : 文件夹路径
     :type folder_path : str
 
-    :return 文件夹里所有后缀为.xlsx的文件名列表
+    :return 文件夹里所有后缀为.xlsx的全文件名列表
     :rtype list
     """
     filename_list = os.listdir(folder_path)
@@ -95,7 +95,7 @@ def get_xlsx_filename(folder_path):
     for filename in filename_list:
         # os.path.splitext():分离文件名与扩展名
         if os.path.splitext(filename)[1] == '.xlsx':
-            xlsx_list.append(filename)
+            xlsx_list.append(folder_path+filename)
     return xlsx_list
 
 def worksheet_save_as(path,workbook):
