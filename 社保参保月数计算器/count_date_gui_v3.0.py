@@ -6,6 +6,11 @@
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
+"""
+本模块是社保参保月数计算器（gui版本），根据起始日期和结束日期，计算某参保时段月数（包含头尾月份）
+日期格式为yymm或yymmdd   日期格式示例：201912 或 20191201
+"""
+
 import tkinter as tk
 
 class CountDate(object):

@@ -6,6 +6,10 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
+"""
+本模块是tkinter GUI界面模板（可选择文件进行操作版），可复制修改相关数据后使用
+"""
+
 import tkinter as tk
 import tkinter.filedialog
 

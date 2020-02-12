@@ -6,6 +6,11 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
+"""
+    本模块用于按照固定行数将单个工作薄拆分为多个工作薄
+    表头默认为1行
+"""
+
 import openpyxl
 import tkinter as tk
 import tkinter.filedialog

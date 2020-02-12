@@ -6,6 +6,11 @@
 # @Software: pycharm
 # @Blog    ：https://blog.csdn.net/weixin_43972976
 
+"""
+本模块用于将单个工作薄按列字段拆分为多个工作薄
+表头默认为1行
+"""
+
 import pandas as pd
 import tkinter as tk
 import tkinter.filedialog

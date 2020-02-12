@@ -6,6 +6,10 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
+"""
+本模块用于自动发送邮件
+"""
+
 import smtplib
 from email.mime.text import MIMEText
 
