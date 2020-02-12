@@ -6,7 +6,7 @@
 # @Software : PyCharm
 # @Blog : https://blog.csdn.net/weixin_43972976
 
-
+import os
 import openpyxl
 from openpyxl.utils import get_column_letter, column_index_from_string
 
@@ -39,7 +39,6 @@ def vlookup(
         'source_value': 数据工作表value所在列号
         'line' :从第几行开始vlookup
 
-
     :type:
         'wb_template': class workbook
         'ws_template_index': int
@@ -54,7 +53,6 @@ def vlookup(
     :return: None
 
     """
-
     # 获取数据工作表对象
     ws_source = wb_source[wb_source.sheetnames[ws_source_index]]
     # 获取模板工作表对象
@@ -82,15 +80,49 @@ def vlookup(
             #找不到数据 相应的单元格填上#N/A
             ws_template.cell(row=row, column=template_value_index).value = "#N/A"
 
-def test():
+def get_xlsx_filename(folder_path):
     """
-    测试函数用
-    :return:
-    """
-    temp = openpyxl.load_workbook("模板.xlsx")
-    source = openpyxl.load_workbook("数据.xlsx")
-    vlookup(temp,0,'C','B',source,1,'E','D',2)
-    temp.save("已对碰.xlsx")
+    获取待处理文件夹里所有后缀为.xlsx的文件名
 
-if __name__ == '__main__':
-    test()
+    :param folder_path : 文件夹路径
+    :type folder_path : str
+
+    :return 文件夹里所有后缀为.xlsx的文件名列表
+    :rtype list
+    """
+    filename_list = os.listdir(folder_path)
+    xlsx_list = []
+    for filename in filename_list:
+        # os.path.splitext():分离文件名与扩展名
+        if os.path.splitext(filename)[1] == '.xlsx':
+            xlsx_list.append(filename)
+    return xlsx_list
+
+def worksheet_save_as(path,workbook):
+    """
+    将一个工作薄里面的多个工作表分别另存为独立的工作薄，独立的工作薄名称为原工作薄各工作表表名
+
+    :param path :另存为的路径
+    :type path : str
+
+    :param workbook:需要进行工作表另存为的workbook对象
+    :type workbook: class workbook
+
+    :return: None
+
+    """
+    sheetname_list = workbook.sheetnames
+    for name in sheetname_list:
+        worksheet = workbook[name]
+        # 创建新的Excel
+        workbook_new = openpyxl.Workbook()
+        # 获取当前sheet
+        worksheet_new = workbook_new.active
+        # 两个for循环遍历整个excel的单元格内容
+        for i, row in enumerate(worksheet.iter_rows(),start=1): #enumerate()从1开始  # 或者for i, row in enumerate(worksheet.rows):
+            for j, cell in enumerate(row,start=1):#enumerate()从1开始
+                # 写入新Excel
+                worksheet_new.cell(row=i, column=j, value=cell.value)
+                # 设置新Sheet的名称
+                worksheet_new.title = name
+        workbook_new.save(path + name + '.xlsx')
