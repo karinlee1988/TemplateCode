@@ -13,7 +13,6 @@
 import os
 import csv
 
-
 def get_filename(folder_path):
     """
     获取文件夹下面所有文件，并返回文件夹里面所有文件名列表（包含子文件夹里面的文件）
