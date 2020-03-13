@@ -95,7 +95,8 @@ class GuiTempStandard(object):
         """
         # 选择文件，path_select变量接收文件地址
         # 注意：self.path 是tk.StringVar()对象，而path_select是str变量
-        path_select = tkinter.filedialog.askopenfilename()
+        path_select = tkinter.filedialog.askopenfilename()    #  选择文件路径
+        # path_select = tkinter.filedialog.askdirectory()     # 选择文件夹路径
         # 通过replace函数替换绝对文件地址中的/来使文件可被程序读取
         # 注意：\\转义后为\，所以\\\\转义后为\\
         path_select = path_select.replace("/", "\\\\")
