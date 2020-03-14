@@ -23,7 +23,7 @@ class MergeWorkbook(object):
         # 新建窗口
         self.master = tk.Tk()
         # 在界面顶部添加横幅图片
-        self.photo = tk.PhotoImage(file="si2.gif")
+        self.photo = tk.PhotoImage(file="img\\doge4.gif")
         # self.path 用于存放选择的文件路径
         # self.flag 当程序运行完成后给用户提示信息
         # self.v1 self.v2接收用户参数 待选用，不够可以加
@@ -58,12 +58,12 @@ class MergeWorkbook(object):
         :rtype:
         """
         # 调整窗口默认大小及在屏幕上的位置
-        self.master.geometry("800x600+600+100")
+        self.master.geometry("800x650+600+100")
         # 窗口的标题栏，自己修改
         self.master.title("合并工作薄by李加林v1.0")
         # 把标题贴上去，自己修改
-        tk.Label(self.master,text="合并工作薄by李加林v1.0 ",font=("黑体",20)).pack()
-        tk.Label(self.master,text="注意！待合并的工作薄必须是.xlsx格式",font=("黑体",16)).pack()
+        tk.Label(self.master,text="合并工作薄v1.0",font=("黑体",20)).pack()
+        tk.Label(self.master,text="------注意！待合并的工作薄必须是.xlsx格式------",font=("黑体",16)).pack()
 
 
     def frame(self):
