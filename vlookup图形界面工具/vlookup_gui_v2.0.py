@@ -93,7 +93,7 @@ class VlookupGui(object):
         # 新建窗口
         self.master = tk.Tk()
         # 在界面顶部添加横幅图片
-        self.photo = tk.PhotoImage(file="img\\si2.gif")
+        self.photo = tk.PhotoImage(file="img\\doge4.gif")
         # self.path 用于存放选择的文件路径
         # self.flag 当程序运行完成后给用户提示信息
         # 注意！这些都是tk.StringVar()对象，不是str，其他地方要用的话要用get()方法获取str
@@ -137,7 +137,7 @@ class VlookupGui(object):
         self.master.title("vlookup工具by李加林v2.0")
         # 把标题贴上去，自己修改
         tk.Label(self.master,text="------用于进行VLOOKUP操作------",font=("黑体",20)).pack()
-        tk.Label(self.master,text="（作者：李加林）",font=("黑体",16)).pack()
+        tk.Label(self.master,text="by李加林",font=("黑体",16)).pack()
 
     def frame(self):
         """
