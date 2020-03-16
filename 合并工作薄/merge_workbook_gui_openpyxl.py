@@ -120,9 +120,9 @@ class MergeWorkbook(object):
         # 调整窗口默认大小及在屏幕上的位置
         self.master.geometry("800x650+600+100")
         # 窗口的标题栏，自己修改
-        self.master.title("合并工作薄by李加林v1.0")
+        self.master.title("合并工作薄by李加林v2.0")
         # 把标题贴上去，自己修改
-        tk.Label(self.master,text="合并工作薄v1.0",font=("黑体",20)).pack()
+        tk.Label(self.master,text="合并工作薄v2.0",font=("黑体",20)).pack()
         tk.Label(self.master,text="------注意！待合并的工作薄必须是.xlsx格式------",font=("黑体",16)).pack()
 
 

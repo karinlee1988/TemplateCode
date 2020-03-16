@@ -7,4 +7,4 @@
 # @Blog : https://blog.csdn.net/weixin_43972976
 
 __author__ = '李加林'
-__all__ = ['my_excel','my_os']
+__all__ = ['my_excel','my_os','my_data_processing']
