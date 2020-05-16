@@ -102,5 +102,5 @@ def record_txt(content,txt_filename):
     :return: None
     :rtype: None
     """
-    with open (txt_filename,"a",encoding='utf8') as f:
+    with open (txt_filename,"a",encoding='utf-8') as f:
         f.write(content+'\n')
