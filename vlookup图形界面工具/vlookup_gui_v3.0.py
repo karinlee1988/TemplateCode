@@ -133,7 +133,7 @@ class VlookupGui(object):
         :rtype:
         """
         # 调整窗口默认大小及在屏幕上的位置
-        self.master.geometry("800x900+600+100")
+        self.master.geometry("800x900+550+50")
         # 窗口的标题栏，自己修改
         self.master.title("vlookup工具by李加林v2.0")
         # 把标题贴上去，自己修改
