@@ -76,11 +76,8 @@ def vlookup(
     template_value_index = column_index_from_string(template_value)
     # 从第line行开始进行vlookup  可根据表头行数进行修改
     for row in range(int(line),ws_template.max_row+1):
-        try:
-            ws_template.cell(row=row,column=template_value_index).value = dic[ws_template.cell(row=row,column=template_key_index).value]
-        except KeyError:
-            #找不到数据 相应的单元格填上#N/A
-            ws_template.cell(row=row, column=template_value_index).value = "#N/A"
+        ws_template.cell(row=row, column=template_value_index).value = dic.get(
+            ws_template.cell(row=row, column=template_key_index).value)
 
 class VlookupGui(object):
     """
