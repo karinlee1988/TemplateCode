@@ -10,6 +10,8 @@
 本模块用于处理各种类型的数据
 """
 
+import re
+
 class IdCardNumber(object):
     """
     用于对身份证号码进行处理
@@ -94,6 +96,64 @@ class IdCardNumber(object):
             return self.id_card_number[0:6] + self.id_card_number[8:17]
 
 
+class RegularExpression(object):
+    """
+    使用正则表达式从混乱的数据（string）中匹配符合格式要求的数据
+
+    * 常用正则表达式：
+
+        r'0?(13|14|15|17|18|19)[0-9]{9}'   ->   手机号码
+        r'\d{17}[\d|x|X]|\d{15}'             -> 15位或18位身份证号码（身份证尾号x或X均可通过校验）
+
+    """
+
+    def __init__(self,content,re_str):
+        """
+
+        :param content: 需处理的字符串
+        :type content: str
+        :param re_str: 正则表达式
+        :type re_str: str
+        """
+        self.content = content
+        self.re_str = re_str
+        #
+        self.pattern = re.compile(re_str)
+
+    def search(self):
+        """
+        扫描整个字符串并返回第一个成功的匹配
+
+        :return:
+        :rtype:
+        """
+        # re.search 匹配整个字符串，直到找到一个匹配。
+        result = re.search(self.pattern,self.content)
+        try:
+            return result.group()
+        # 匹配失败的话返回0
+        except AttributeError:
+            return 0
+
+    def match(self):
+        """
+        尝试从字符串的起始位置匹配一个模式，如果不是起始位置匹配成功的话，match()就返回none
+
+        :return:
+        :rtype:
+        """
+        # re.match 只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回 None
+        result = re.match(self.pattern,self.content)
+        try:
+            return result.group()
+        # 匹配失败的话返回0
+        except AttributeError:
+            return 0
+
+
 if __name__ == '__main__':
-    iaa = IdCardNumber("440228640524722")
-    print(iaa.fifteen_to_eighteen())
+    # iaa = IdCardNumber("440228640524722")
+    # print(iaa.fifteen_to_eighteen())
+    r = RegularExpression(u"阿大撒大撒大苏打ada441881198808150214.。。，asdsad阿达阿三",r'\d{17}[\d|x|X]|\d{15}')
+    r2 = r.search()
+    print(r2)
