@@ -17,7 +17,7 @@
 #     os.startfile(f,'print')
 
 
-class TestObj1():
+class TestObj1(object):
 
     def __init__(self):
         self.a = 1
@@ -31,14 +31,16 @@ class TestObj2(TestObj1):
 
     def __init__(self):
         super(TestObj2, self).__init__()
-        # self.a = 3
-        # self.b = 5
+    #
+    #     # self.a = 3
+    #     # self.b = 5
 
     def Math2(self):
         return self.a - self.b
 
-t1 = TestObj1()
+if __name__ == '__main__':
 
-t2 = TestObj2()
-print(t1.Math1())
-print(t2.Math2())
+    t1 = TestObj1()
+    print(t1.Math1())
+    t2 = TestObj2
+    print(t2.Math2())

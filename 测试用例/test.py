@@ -35,11 +35,14 @@ def test_record_txt():
     record_txt(strings,"D:\\我的坚果云\\学习文档\\python小工具\\测试用例\\testtxt.txt")
 
 
+def test_get_xlsx_full_filename():
+    filelist = get_xlsx_full_filename("D:\\MyNutstore\\PersonalStudy\\python_tools\\测试用例")
+    return filelist
+
 def test_get_xlsx_filename():
-    pass
-
-
+    filelist = get_xlsx_filename("D:\\MyNutstore\\PersonalStudy\\python_tools\\测试用例")
+    return filelist
 
 
 if __name__ == '__main__':
-    test_record_csv()
+    print(test_get_xlsx_filename())

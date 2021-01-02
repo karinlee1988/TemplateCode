@@ -132,10 +132,10 @@ class VlookupGui(object):
         # 调整窗口默认大小及在屏幕上的位置
         self.master.geometry("800x900+550+50")
         # 窗口的标题栏，自己修改
-        self.master.title("vlookup工具by李加林v2.0")
+        self.master.title("vlookup工具by李加林v3.0")
         # 把标题贴上去，自己修改
-        tk.Label(self.master,text="------用于进行VLOOKUP操作------",font=("黑体",20)).pack()
-        tk.Label(self.master,text="by李加林",font=("黑体",16)).pack()
+        tk.Label(self.master,text="vlookup工具by李加林",font=("黑体",20)).pack()
+        tk.Label(self.master, text="                    ", font=("黑体", 18)).pack()
 
     def frame(self):
         """
