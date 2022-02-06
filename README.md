@@ -1,10 +1,10 @@
-# python_tools
- - 自己用python制作的一些小工具
+# TemplateCode
+ - 模板代码，供CTRL+C CTRL+V =。= 
 ------
-### 文件夹说明
+## 文件夹说明
 
 
 
-#### tkinterGUI界面模板
+### tkinterGUI界面模板
 自己写的现成的图形化界面，可复制修改相关数据后使用（包括可选择文件版和不选择文件版）
 
