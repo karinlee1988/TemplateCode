@@ -129,14 +129,5 @@ dmypy.json
 .pyre/
 
 # myself
-*.xlsx
-*.xls
+
 .idea
-*.txt
-*.exe
-*.png
-*.csv
-itchat.pkl
-*.docx
-*.bmp
-*.ppt
