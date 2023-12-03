@@ -15,9 +15,12 @@ import time
 import openpyxl
 from docx import Document
 
+
 class ExcelPrintToWord(object):
     """
     20230502 test OK
+    20231203 test OK
+
     """
 
     def __init__(self, word_path, excel_path, isprint=False):
@@ -93,14 +96,16 @@ class ExcelPrintToWord(object):
             self.replace_text(docx, "{address}", address)
             self.replace_text(docx, "{phone}", phone)
             self.replace_text(docx, "{company}", company)
-            docx.save(tag + "_通知.docx")
-        # -------------------
+            docx.save(tag + company +".docx")
+            print(f">>> 序号：{tag},单位{company}已处理完成！<<<")
+            # -------------------
             # 是否需要实际打印，默认为否
             if self.isprint:
-                os.startfile(tag + "_通知.docx", 'print')
+                os.startfile(tag + company +".docx", 'print')
                 # 根据打印机的情况设置延时
                 time.sleep(10)
 
+
 if __name__ == '__main__':
-    p = ExcelPrintToWord('tests\\通知.docx', 'tests\\名单.xlsx', isprint=False)
+    p = ExcelPrintToWord('tests\\通知_测试excel套打至word.docx', 'tests\\名单_测试excel套打至word.xlsx', isprint=False)
     p.main()
