@@ -23,7 +23,7 @@
 
 `excel套打至word.py`:将一个excel数据表格多行的内容分别套打到word文档中，excel数据表格每行生成一份套打的word文档
 
-`excel套打至excel.py`: 待开发
+`excel套打至excel.py`: 将一个excel数据表格多行的内容分别套打到excel 模板中，excel数据表格每行生成一份套打的excel模板文档
 
 ### 文件操作
 **包括常用的文件操作函数如下：**
