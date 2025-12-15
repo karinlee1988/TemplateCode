@@ -47,7 +47,7 @@ def get_singlefolder_fullfilename(folder_path: str, filetype: list) -> list:
     :param filetype: 指定一种或多种类型文件的后缀列表（如['.xlsx']或['.xlsx','.xls']）
     :type  filetype: list
 
-    :return: 文件夹里面所有全文件名列表（包含子文件夹里面的文件）
+    :return: 文件夹里面所有全文件名列表（不包含子文件夹里面的文件）
     :rtype:  list
     """
     filename_list = []
